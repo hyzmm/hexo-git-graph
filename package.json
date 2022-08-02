@@ -2,15 +2,17 @@
   "name": "hexo-git-graph",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gitgraph/js": "^1.4.0"
+    "@gitgraph/js": "^1.4.0",
+    "query-string": "^7.1.1"
   },
   "devDependencies": {
     "parcel": "^2.6.2",
