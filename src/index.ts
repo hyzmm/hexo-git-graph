@@ -8,6 +8,7 @@ import {
 } from '@gitgraph/js';
 import queryString from 'query-string';
 import { Config } from './types';
+import ScrollBooster from 'scrollbooster';
 
 const colors: string[] = [
     '#929292',
@@ -45,6 +46,7 @@ function parseConfig(): Config {
     const query = queryString.parse(location.search);
     return {
         showCommitNumber: 'commit_number' in query,
+        scrollable: 'scrollable' in query,
         branchesOrder:
             'branches_order' in query
                 ? (query['branches_order'] as string)?.split(',')
@@ -54,6 +56,14 @@ function parseConfig(): Config {
     };
 }
 const config = parseConfig();
+
+if (config.scrollable) {
+    new ScrollBooster({
+        viewport: document.body,
+        scrollMode: 'transform',
+    });
+}
+
 const gitgraph = createGitgraph(graphContainer, {
     mode: config.mode,
     compareBranchesOrder: config.branchesOrder

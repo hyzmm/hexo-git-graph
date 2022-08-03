@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@gitgraph/js": "^1.4.0",
-    "query-string": "^7.1.1"
+    "@types/scrollbooster": "^2.2.1",
+    "query-string": "^7.1.1",
+    "scrollbooster": "^3.0.2"
   },
   "devDependencies": {
     "parcel": "^2.6.2",
