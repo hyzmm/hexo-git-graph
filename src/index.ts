@@ -94,6 +94,9 @@ atob(location.hash.substring(1))
             case 'merge':
                 merge(args[0]);
                 break;
+            case 'set_commit_num':
+                commitNumber = parseInt(args[0]);
+                break;
             default:
                 console.warn(`Unknown command: ${commandName}`);
         }
